@@ -175,16 +175,16 @@ span{
 
 /*Service section code*/
 
-.services{
+.services {
     background: var(--snd-bg-color);
 }
 
-.heading{
+.heading {
     text-align: center;
     font-size: 6.5rem;
 }
-    
-.services-content{
+
+.services-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, auto));
     align-items: center;
@@ -192,30 +192,78 @@ span{
     margin-top: 4.1rem;
 }
 
-.row{
-    background: var(--bg-color);
+.row {
+    cursor: pointer;
+    background: var(--snd-bg-color); /* Dark gray background */
     border-radius: 27px;
     border: 1px solid transparent;
     box-shadow: 0 0 5px var(--main-color);
+    position: relative;
     padding: 20px;
     transition: all 0.5s ease;
+    overflow: hidden; /* Important: Clip the description within the card */
 }
 
-.row img{
+.service-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    position: relative; /* Add relative positioning */
+    z-index: 1; /* Ensure content is above the description */
+    width: 100%;
+}
+
+.service-description {
+    position: absolute;
+    top: 100%; /* Initially hidden below the card */
+    left: 0;
+    width: 100%;
+    background-color: var(--snd-bg-color); /* Dark gray background */
+    color: var(--text-color);
+    padding: 20px;
+    display: flex; /* Use flexbox for vertical centering */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    transition: top 0.3s ease-out; /* Transition the bottom property */
+    overflow: hidden;
+    z-index: 2; /* Ensure description is above the image */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.service-description p {
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.row.active .service-description {
+    top: 65%; /* Slide up to the bottom of the card */
+}
+
+.row img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.row:hover img {
+    transform: scale(1.05);
+}
+
+.row img {
     height: auto;
     width: 100%;
     border-radius: 27px;
     margin-bottom: 1.4rem;
 }
 
-.row h4{
+.row h4 {
     font-size: 25px;
     font-weight: 700;
     margin-bottom: 10px;
     line-height: 1.4;
 }
 
-.row:hover{
+.row:hover {
     border: 1px solid var(--main-color);
     transform: translateY(-5px) scale(1.04);
     cursor: pointer;

@@ -1,0 +1,136 @@
+/* program.css */
+
+/* Import color variables from style.css */
+:root {
+    --bg-color: #000;           /* Primary background (black) */
+    --snd-bg-color: #111;       /* Secondary background (dark gray) */
+    --text-color: #fff;         /* Text color (white) */
+    --main-color: #f77234;      /* Main color (orange) */
+    --linear-grad: linear-gradient(to right, #000, #f77234);  /* Linear gradient */
+    --grad-clr1: #000;         /* Gradient color 1 (black) */
+    --grad-clr2: #f77234;       /* Gradient color 2 (orange) */
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: system-ui, -apple-system, sans-serif; /* Consistent font */
+    color: var(--text-color);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--main-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+p {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+ul {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+li {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--snd-bg-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Links */
+a {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 1rem;
+    box-shadow: none;
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.5s ease;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+.btn:hover {
+    color: var(--text-color);
+    box-shadow: 0 0 1.6rem var(--main-color);
+}
+
+/* Tips Section */
+.tips {
+    margin-top: 2rem;
+}
+
+.tips h3 {
+    text-align: left;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    p, li {
+        font-size: 1.4rem;
+    }
+}

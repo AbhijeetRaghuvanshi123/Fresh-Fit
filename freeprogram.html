@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <!-- Link to bmi.css -->
+    <link rel="stylesheet" href="bmi.css">
+    <style>
+        /* Add some styling for the message container */
+        #message-container {
+            margin-top: 1em;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        #message-container p{
+            margin-top: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <form name="bmiForm">
+        <div class="bmi-calculator">
+            <h1 style="margin-bottom: 1em;">Calculate your BMI</h1>
+            <div class="bmi-calculator-weight">
+                <input class="weight-slider" name="realweight" id="myWeight" type="range" min="25" max="180" value="60"/>
+                <p style="margin-top: 1.8em;">
+                    WEIGHT:
+                    <input name="Teža" id="inputWeight" type="number" value="60" min="25" max="180" step="1" oninput="showValWeight(this.value)"/>
+                    <span id="weight"></span> kg
+                </p>
+            </div>
+            <div class="bmi-calculator-height">
+                <input class="height-slider" name="realheight" id="myHeight" type="range" min="100" max="220" step="1" value="160">
+                <p style="margin-top: 1.8em;">
+                    HEIGHT:
+                    <input name="Višina" id="inputHeight" type="number" value="160" min="100" max="220" step="1" oninput="showValHeight(this.value)"/>
+                    <span id="height"></span> cm
+                </p>
+            </div>
+            <input class="gumb" type="button" value="Calculate" onclick="calculateBmi()" style="margin-top: 0.5em">
+            <div id="message-container">
+                <p>
+                    <strong>Your BMI:</strong>
+                    <span id="yourbmi" style="margin-left: 8px;"></span>
+                </p>
+                <p>
+                    <span id="evaluationMessage"></span>
+                </p>
+            </div>
+            <!-- New Button -->
+            <a id="program-link" href="#" class="free-program-btn">Get Free Program for Your BMI</a>
+        </div>
+    </form>
+    <!-- Link to bmi.js -->
+    <script src="bmi.js"></script>
+    <script>
+        // Modify the calculateBmi function in bmi.js
+        function calculateBmi() {
+            var weight = document.bmiForm.realweight.value;
+            var height = (document.bmiForm.realheight.value)/100;
+            var realbmi = (weight)/Math.pow(height, 2);
+            var realbmiOutput = document.getElementById("yourbmi");
+            var messageOutput = document.getElementById("evaluationMessage");
+            var roundedBmi = realbmi.toFixed(1);
+            messageOutput.innerHTML = ""; // Clear message before calculating new BMI
+            realbmiOutput.innerHTML = " " + roundedBmi; // Print BMI
+
+            // Get the program link element
+            var programLink = document.getElementById("program-link");
+
+            // Determine the appropriate workout plan based on BMI
+            if (roundedBmi < 18.5) {
+                messageOutput.innerHTML = "You are underweight.";
+                programLink.href = "underweight.html";
+            } else if (roundedBmi >= 18.5 && roundedBmi < 25) {
+                messageOutput.innerHTML = "You have a normal weight.";
+                programLink.href = "normal.html";
+            } else if (roundedBmi >= 25 && roundedBmi < 30) {
+                messageOutput.innerHTML = "You are overweight.";
+                programLink.href = "overweight.html";
+            } else {
+                messageOutput.innerHTML = "You are obese.";
+                programLink.href = "obese.html";
+            }
+            // Console loggings
+            console.log('Teža: ' + weight + " kg");
+            console.log('Višina: ' + height + " m");
+            console.log('BMI: ' + realbmi);
+        }
+    </script>
+</body>
+</html>
