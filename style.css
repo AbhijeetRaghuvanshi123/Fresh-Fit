@@ -671,3 +671,111 @@ span{
         font-size: 50%;
     }
 }
+
+/* modal.css - Styles for the Calculator Choice Modal */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top (higher than header's 1000) */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+    /* Use flexbox to center the modal content */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: var(--snd-bg-color); /* Use secondary background color */
+    margin: auto; /* Center vertically and horizontally */
+    padding: 30px;
+    border: 1px solid var(--main-color); /* Use main color for border */
+    border-radius: 15px; /* Rounded corners */
+    width: 85%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Maximum width */
+    color: var(--text-color); /* Use text color */
+    position: relative; /* Needed for positioning the close button */
+    text-align: center; /* Center text */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  .modal-content h3 {
+      font-size: 2.5rem; /* Adjust heading size */
+      color: var(--main-color); /* Use main color for heading */
+      margin-bottom: 1rem;
+  }
+  
+  .modal-content p {
+      font-size: 1.6rem; /* Adjust paragraph size */
+      margin-bottom: 2rem;
+  }
+  
+  /* The Close Button */
+  .close-button {
+    color: var(--text-color);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    transition: 0.3s ease;
+  }
+  
+  .close-button:hover,
+  .close-button:focus {
+    color: var(--main-color); /* Highlight on hover */
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Buttons inside the modal */
+  .modal-btn {
+      /* Copy styles from .btn in style.css for consistency */
+      display: block; /* Make buttons stack vertically */
+      width: 80%; /* Adjust width as needed */
+      margin: 15px auto; /* Center buttons and add spacing */
+      padding: 1rem 2.8rem;
+      background: var(--main-color);
+      border-radius: 1rem;
+      box-shadow: none;
+      font-size: 1.6rem;
+      color: var(--bg-color);
+      letter-spacing: 0.1rem;
+      font-weight: 600;
+      transition: 0.5s ease;
+      text-decoration: none; /* Ensure links look like buttons */
+      border: none; /* Remove default link border */
+      cursor: pointer;
+  }
+  
+  .modal-btn:hover {
+      color: var(--text-color);
+      background: var(--main-color); /* Keep background on hover */
+      box-shadow: 0 0 1.6rem var(--main-color);
+  }
+  
+  /* Responsive adjustments if needed */
+  @media (max-width: 600px) {
+      .modal-content {
+          width: 90%;
+          padding: 20px;
+      }
+      .modal-btn {
+          width: 90%;
+          font-size: 1.4rem;
+          padding: 0.8rem 2rem;
+      }
+      .modal-content h3 {
+          font-size: 2rem;
+      }
+       .modal-content p {
+          font-size: 1.4rem;
+      }
+  }
+  

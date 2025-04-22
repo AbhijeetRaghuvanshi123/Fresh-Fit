@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Metrics Calculator - Fresh & Fit</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bmi.css">
+    <style>
+        /* --- Base Body & Container --- */
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 2rem; /* Added more padding */
+            background-color: var(--bg-color); /* Ensure body background matches */
+            color: var(--text-color);
+            line-height: 1.7; /* Improved line spacing */
+        }
+
+        .metrics-calculator {
+            border: 1px solid transparent;
+            box-shadow: 0 0 10px rgba(247, 114, 52, 0.5); /* Match workout page shadow */
+            padding: 3.5em; /* Slightly increased padding */
+            margin: 0;
+            background-color: var(--snd-bg-color);
+            border-radius: 15px; /* Match workout page radius */
+            width: 100%;
+            max-width: 600px; /* Slightly wider for better spacing */
+            color: var(--text-color);
+        }
+
+        /* --- Heading --- */
+        .metrics-calculator h2 {
+            text-align: center;
+            margin-bottom: 2rem; /* Increased margin */
+            color: var(--main-color);
+            font-size: 3.5rem; /* Increased font size */
+        }
+
+        /* --- Labels & Inputs (Using Grid for Alignment) --- */
+        .metrics-calculator label {
+            display: grid; /* Use grid for alignment */
+            grid-template-columns: auto 1fr; /* Label text auto width, input takes rest */
+            gap: 1.5em; /* Space between label text and input */
+            align-items: center; /* Vertically align items */
+            font-size: 1.8rem; /* Increased label font size */
+            margin-bottom: 2em; /* Increased spacing between rows */
+            color: var(--text-color);
+        }
+
+        .metrics-calculator input[type="number"],
+        .metrics-calculator select {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            background: var(--bg-color);
+            border-style: none;
+            height: 40px; /* Increased height */
+            width: 100%; /* Fill grid cell */
+            max-width: 150px; /* Limit max width */
+            justify-self: end; /* Align input to the right of its cell */
+            text-align: right;
+            font-size: 1.7rem; /* Increased input font size */
+            color: var(--text-color);
+            padding: 0 15px; /* Adjusted padding */
+            border-radius: 8px; /* Slightly more rounded */
+            border: 1px solid var(--main-color);
+        }
+         .metrics-calculator select {
+            text-align: left;
+            padding-right: 35px; /* Ensure space for arrow */
+             background-image: url('data:image/svg+xml;utf8,<svg fill="%23f77234" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+             background-repeat: no-repeat;
+             background-position: right 10px center;
+             background-size: 20px; /* Slightly larger arrow */
+         }
+
+        .metrics-calculator input[type="number"]:focus,
+        .metrics-calculator select:focus {
+            outline: none;
+            box-shadow: 0 0 8px var(--main-color); /* Enhanced focus shadow */
+        }
+
+        /* --- Buttons --- */
+        .metrics-calculator .btn { /* Calculate Button */
+            width: 100%;
+            margin-top: 1.5em;
+            margin-bottom: 2em; /* More space below calculate button */
+            font-size: 1.8rem; /* Larger button text */
+            padding: 1.2rem 2.8rem; /* Larger button padding */
+        }
+
+        /* Program Link Buttons */
+         #wthr-program-link,
+          #whtr-workout-link,
+         #bodyfat-workout-link { /* ADDED ID HERE */
+        display: none; /* Hidden initially */
+        width: 100%;
+        text-align: center;
+        margin-top: 1.5em; /* Increased spacing */
+        font-size: 1.7rem; /* Larger button text */
+        padding: 1.1rem 2.8rem; /* Larger button padding */
+        /* Inherits .free-program-btn styles from bmi.css */
+    }
+        /* --- Results Area --- */
+        #results {
+            margin-top: 2em; /* More space above results */
+            margin-bottom: 1.5em; /* Space below results before buttons */
+            font-size: 1.9rem; /* Increased result font size */
+            line-height: 1.8; /* Increased line spacing */
+            text-align: center;
+            color: var(--text-color);
+            background-color: var(--bg-color); /* Optional: slight background contrast */
+            padding: 1em;
+            border-radius: 8px;
+        }
+        #results strong {
+            color: var(--main-color);
+            font-weight: 600;
+        }
+        #results p { /* Style initial/error message */
+            font-size: 1.7rem;
+            color: #ccc; /* Lighter color for placeholder */
+        }
+         #results p[style*="color: red"] { /* Make error message stand out */
+             color: #ff5c5c !important; /* Brighter red */
+             font-weight: bold;
+         }
+
+        /* Style for evaluation messages (BMI & WHtR) */
+        .evaluation-message {
+            font-weight: 500; /* Normal weight */
+            font-size: 1.7rem; /* Slightly smaller */
+            font-style: italic;
+            opacity: 0.9;
+            margin-left: 8px;
+            color: #ddd; /* Slightly dimmer color */
+        }
+
+        /* --- Back Button --- */
+         .back-btn-container { /* Added container for centering */
+            text-align: center;
+            margin-top: 3em; /* More space above back button */
+        }
+        .back-btn {
+            display: inline-block;
+            font-size: 1.6rem; /* Larger back button text */
+            color: var(--main-color);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+        .back-btn:hover {
+            color: var(--text-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="metrics-calculator">
+        <h2>Body Metrics Calculator</h2>
+
+        <label>Gender:
+          <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </label>
+
+        <label>Height (cm): <input type="number" id="height" min="50" max="250" step="0.1" placeholder="e.g., 175" /></label>
+        <label>Weight (kg): <input type="number" id="weight" min="10" max="300" step="0.1" placeholder="e.g., 70" /></label>
+        <label>Waist (cm): <input type="number" id="waist" min="30" max="200" step="0.1" placeholder="e.g., 80" /></label>
+        <label>Hip (cm): <input type="number" id="hip" min="30" max="200" step="0.1" placeholder="e.g., 95" /></label>
+        <label>Neck (cm): <input type="number" id="neck" min="10" max="100" step="0.1" placeholder="e.g., 38" /></label>
+
+        <button onclick="calculateMetrics()" class="btn">Calculate Metrics</button>
+
+        <div id="results">
+             <p>Please fill in all fields and click Calculate.</p>
+             <!-- Results will be populated here -->
+        </div>
+
+        <!-- BMI program link button (initially hidden) -->
+        <a id="wthr-program-link" href="#" class="free-program-btn">Get Program for Your BMI</a>
+
+        <!-- WHtR workout link button (initially hidden) -->
+        <a id="whtr-workout-link" href="#" class="free-program-btn">Get Workout for Your WHtR</a>
+
+        <!-- Body Fat workout link button (initially hidden) -->
+    <a id="bodyfat-workout-link" href="#" class="free-program-btn">Get Workout for Your Body Fat %</a>
+
+         <!-- Wrapped back button in a container for centering -->
+         <div class="back-btn-container">
+             <a href="index.html#about" class="back-btn">Back to Home</a>
+         </div>
+    </div>
+
+    <script>
+        function calculateMetrics() {
+            // --- Get Elements ---
+            const gender = document.getElementById("gender").value;
+            const heightInput = document.getElementById("height");
+            const weightInput = document.getElementById("weight");
+            const waistInput = document.getElementById("waist");
+            const hipInput = document.getElementById("hip");
+            const neckInput = document.getElementById("neck");
+            const resultsDiv = document.getElementById("results");
+            const bmiProgramLink = document.getElementById("wthr-program-link");
+            const whtrWorkoutLink = document.getElementById("whtr-workout-link");
+            const bodyfatWorkoutLink = document.getElementById("bodyfat-workout-link"); // Get the new button
+        
+            // --- Reset UI ---
+            resultsDiv.innerHTML = '<p>Please fill in all fields and click Calculate.</p>';
+            bmiProgramLink.style.display = 'none';
+            bmiProgramLink.href = '#';
+            whtrWorkoutLink.style.display = 'none';
+            whtrWorkoutLink.href = '#';
+            bodyfatWorkoutLink.style.display = 'none'; // Hide Body Fat link
+            bodyfatWorkoutLink.href = '#';             // Reset Body Fat link href
+            let isValid = true;
+            const inputs = [heightInput, weightInput, waistInput, hipInput, neckInput];
+        
+            // --- Basic Validation ---
+            // ... (validation remains the same) ...
+            inputs.forEach(input => {
+                input.style.borderColor = 'var(--main-color)'; // Reset border
+                if (!input.value || isNaN(parseFloat(input.value)) || parseFloat(input.value) <= 0) {
+                    isValid = false;
+                    input.style.borderColor = 'red'; // Highlight invalid input
+                }
+            });
+        
+            if (!isValid) {
+                 resultsDiv.innerHTML = '<p style="color: red;">Please enter valid positive numbers in all fields.</p>';
+                 return;
+            }
+        
+            // --- Parse Valid Inputs ---
+            // ... (parsing remains the same) ...
+            const height = parseFloat(heightInput.value);
+            const weight = parseFloat(weightInput.value);
+            const waist = parseFloat(waistInput.value);
+            const hip = parseFloat(hipInput.value);
+            const neck = parseFloat(neckInput.value);
+        
+        
+            // --- Calculations ---
+            let bmi = NaN;
+            let whtr = NaN;
+            let bodyFat = NaN; // Keep as NaN initially
+        
+            let bmiMessage = "";
+            let bmiProgramUrl = "#";
+            let whtrMessage = "";
+            let whtrProgramUrl = "#";
+            let bodyfatProgramUrl = "#"; // URL for Body Fat workout
+        
+            // Calculate BMI & Determine Program
+            // ... (BMI calculation remains the same) ...
+             if (height > 0 && weight > 0) {
+                bmi = parseFloat((weight / ((height / 100) ** 2)).toFixed(1));
+                if (bmi < 18.5) {
+                    bmiMessage = "Underweight";
+                    bmiProgramUrl = "underweight.html";
+                } else if (bmi >= 18.5 && bmi < 25) {
+                    bmiMessage = "Normal weight";
+                    bmiProgramUrl = "normal.html";
+                } else if (bmi >= 25 && bmi < 30) {
+                    bmiMessage = "Overweight";
+                    bmiProgramUrl = "overweight.html";
+                } else { // bmi >= 30
+                    bmiMessage = "Obese";
+                    bmiProgramUrl = "obese.html";
+                }
+            }
+        
+        
+            // Calculate Waist-to-height ratio & Determine Workout
+            // ... (WHtR calculation remains the same) ...
+            if (waist > 0 && height > 0) {
+                whtr = parseFloat((waist / height).toFixed(2));
+                if (whtr < 0.5) {
+                    whtrMessage = "Healthy Zone";
+                    whtrProgramUrl = "healtyzone.html";
+                } else if (whtr >= 0.5 && whtr < 0.6) {
+                    whtrMessage = "Moderate Risk Zone";
+                    whtrProgramUrl = "moderaterisk.html";
+                } else { // whtr >= 0.6
+                    whtrMessage = "High Risk Zone";
+                    whtrProgramUrl = "highriskzone.html";
+                }
+            }
+        
+        
+            // Calculate Body Fat % (U.S. Navy Method) & Determine Workout
+            try {
+                 if (gender === "male") {
+                    if (waist > neck && height > 0) {
+                        const logWaistNeck = Math.log10(waist - neck);
+                        const logHeight = Math.log10(height);
+                        if (isFinite(logWaistNeck) && isFinite(logHeight)) {
+                             const denominator = 1.0324 - 0.19077 * logWaistNeck + 0.15456 * logHeight;
+                             if (denominator !== 0 && denominator > 0) {
+                                bodyFat = parseFloat((495 / denominator - 450).toFixed(1)); // Parse to float
+                             }
+                        }
+                    }
+                } else { // Female
+                     if (waist + hip > neck && height > 0) {
+                        const logWaistHipNeck = Math.log10(waist + hip - neck);
+                        const logHeight = Math.log10(height);
+                         if (isFinite(logWaistHipNeck) && isFinite(logHeight)) {
+                            const denominator = 1.29579 - 0.35004 * logWaistHipNeck + 0.22100 * logHeight;
+                             if (denominator !== 0 && denominator > 0) {
+                                bodyFat = parseFloat((495 / denominator - 450).toFixed(1)); // Parse to float
+                             }
+                        }
+                     }
+                }
+            } catch (error) {
+                console.error("Error calculating body fat:", error);
+                bodyFat = NaN; // Ensure bodyFat is NaN if calculation fails
+            }
+        
+            // --- Determine Body Fat Program URL ---
+            if (!isNaN(bodyFat) && bodyFat > 0) {
+                if (gender === 'male') {
+                    if (bodyFat <= 13) {
+                        bodyfatProgramUrl = "leanathletic.html";
+                    } else if (bodyFat <= 17) {
+                        bodyfatProgramUrl = "fit.html";
+                    } else if (bodyFat < 25) {
+                        bodyfatProgramUrl = "average.html";
+                    } else { // >= 25
+                        bodyfatProgramUrl = "overfat.html";
+                    }
+                } else { // female
+                    if (bodyFat <= 23) {
+                        bodyfatProgramUrl = "leanathletic.html";
+                    } else if (bodyFat <= 30) {
+                        bodyfatProgramUrl = "fit.html";
+                    } else if (bodyFat < 37) {
+                        bodyfatProgramUrl = "average.html";
+                    } else { // >= 37
+                        bodyfatProgramUrl = "overfat.html";
+                    }
+                }
+            }
+        
+        
+            // --- Display Results ---
+            let resultsHTML = '';
+            // ... (BMI and WHtR display remains the same) ...
+            if (!isNaN(bmi)) {
+                resultsHTML += `<p><strong>BMI:</strong> ${bmi} <span class="evaluation-message">(${bmiMessage})</span></p>`;
+            } else {
+                 resultsHTML += `<p><strong>BMI:</strong> Calculation Error</p>`;
+            }
+        
+            if (!isNaN(whtr)) {
+                resultsHTML += `<p><strong>Waist-to-Height Ratio:</strong> ${whtr} <span class="evaluation-message">(${whtrMessage})</span></p>`;
+            } else {
+                 resultsHTML += `<p><strong>Waist-to-Height Ratio:</strong> Calculation Error</p>`;
+            }
+        
+            // Display Body Fat %
+            if (!isNaN(bodyFat) && bodyFat > 0) {
+                 resultsHTML += `<p><strong>Estimated Body Fat %:</strong> ${bodyFat}%</p>`;
+            } else {
+                 resultsHTML += `<p><strong>Estimated Body Fat %:</strong> Calculation Error or Invalid Input</p>`;
+            }
+        
+            resultsDiv.innerHTML = resultsHTML;
+        
+            // --- Update and Show Links ---
+            // BMI Link
+            if (!isNaN(bmi)) {
+                bmiProgramLink.href = bmiProgramUrl;
+                bmiProgramLink.style.display = 'block';
+            }
+            // WHtR Link
+            if (!isNaN(whtr)) {
+                whtrWorkoutLink.href = whtrProgramUrl;
+                whtrWorkoutLink.style.display = 'block';
+            }
+            // Body Fat Link
+            if (!isNaN(bodyFat) && bodyFat > 0 && bodyfatProgramUrl !== "#") { // Check if a valid URL was set
+                bodyfatWorkoutLink.href = bodyfatProgramUrl;
+                bodyfatWorkoutLink.style.display = 'block';
+            }
+        }
+        
+        // --- Event Listeners to Reset UI on Input Change ---
+        document.querySelectorAll('.metrics-calculator input[type="number"], .metrics-calculator select').forEach(element => {
+            element.addEventListener('input', () => {
+                // ... (border reset logic remains the same) ...
+                if (element.type === 'number' && element.value && !isNaN(parseFloat(element.value)) && parseFloat(element.value) > 0) {
+                     element.style.borderColor = 'var(--main-color)';
+                } else if (element.tagName === 'SELECT') {
+                     // No specific validation needed on change for select, just reset UI
+                }
+        
+        
+                // Hide results and ALL program links when user starts typing again
+                document.getElementById("results").innerHTML = '<p>Please fill in all fields and click Calculate.</p>';
+                document.getElementById("wthr-program-link").style.display = 'none';
+                document.getElementById("whtr-workout-link").style.display = 'none';
+                document.getElementById("bodyfat-workout-link").style.display = 'none'; // Hide Body Fat link too
+            });
+        });
+        
+        // Add placeholders for better UX
+        // ... (DOMContentLoaded listener remains the same) ...
+         document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('height').placeholder = 'e.g., 175';
+            document.getElementById('weight').placeholder = 'e.g., 70';
+            document.getElementById('waist').placeholder = 'e.g., 80';
+            document.getElementById('hip').placeholder = 'e.g., 95';
+            document.getElementById('neck').placeholder = 'e.g., 38';
+        });
+        
+        </script>
+        
+
+</body>
+</html>

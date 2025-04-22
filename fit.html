@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit Workout Plan - Fresh & Fit</title> <!-- UPDATED TITLE -->
+    <link rel="stylesheet" href="style.css"> <!-- Link base styles -->
+    <style>
+        /* Copied styles from leanathletic.html */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 4rem 2rem; /* Add padding */
+            line-height: 1.7; /* Improve readability */
+        }
+        .workout-container {
+            max-width: 900px; /* Limit width for readability */
+            margin: 2rem auto; /* Center container */
+            background-color: var(--snd-bg-color); /* Use secondary background */
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(247, 114, 52, 0.5); /* Subtle shadow */
+        }
+        h1, h2, h3, h4 {
+            color: var(--main-color); /* Orange headings */
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-size: 2.8rem;
+            border-bottom: 1px solid var(--main-color);
+            padding-bottom: 0.5rem;
+        }
+        h3 { /* Using h3 for Day titles now */
+            font-size: 2.4rem;
+            color: var(--text-color); /* White for day names */
+            margin-top: 2rem; /* More space above day titles */
+        }
+        h4 { /* Can be used for sub-sections if needed */
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-top: 1.5rem;
+        }
+        p, li {
+            font-size: 1.7rem; /* Larger base text */
+            margin-bottom: 0.8rem;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        /* Removed workout-level specific styles as they aren't used here */
+
+        /* Style for rest periods */
+        .rest-period {
+            font-style: italic;
+            color: #ccc; /* Lighter color for rest */
+            margin-top: -0.5rem; /* Pull closer to the list */
+            margin-bottom: 1.5rem;
+        }
+
+        /* Style for finisher list items */
+        li strong { /* Make finisher label stand out */
+             color: var(--main-color);
+        }
+
+        .back-btn-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        /* Use .btn style from style.css for back button */
+        .back-btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 1rem;
+            box-shadow: none;
+            font-size: 1.6rem;
+            color: var(--bg-color);
+            letter-spacing: 0.1rem;
+            font-weight: 600;
+            transition: 0.5s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            color: var(--text-color);
+            box-shadow: 0 0 1.6rem var(--main-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="workout-container">
+        <h1>Fit Workout Plan (Men 14-17% / Women 24-30% BF)</h1> <!-- UPDATED H1 -->
+
+        <section class="intro">
+            <!-- UPDATED INTRO CONTENT -->
+            <h2>Goal</h2>
+            <p>Body Recomposition (Fat Loss + Muscle Gain)</p>
+
+            <h2>Target Audience</h2>
+            <p>Men (14–17% BF) / Women (24–30% BF)</p>
+
+            <h2>Training Level</h2>
+            <p>Intermediate</p>
+
+            <h2>Caloric Intake</h2>
+            <p>Near maintenance or slight deficit</p>
+
+            <h2>Key Focus</h2>
+            <p>Balanced strength, moderate cardio, muscle tone, metabolic conditioning</p>
+            <!-- END UPDATED INTRO CONTENT -->
+        </section>
+
+        <section class="workout-schedule">
+            <h2>Weekly Workout Split (5 Days + Optional Cardio Day)</h2>
+
+            <!-- Day 1 -->
+            <h3>Day 1 – Full Body Strength</h3>
+            <ul>
+                <li>Squats – 4×6–8</li>
+                <li>Bench Press – 4×6</li>
+                <li>Romanian Deadlifts – 3×10</li>
+                <li>Pull-ups – 3×10</li>
+                <li>Plank (weighted or extended) – 3×1 min</li>
+            </ul>
+            <p class="rest-period">Rest: 90 sec between sets</p>
+
+            <!-- Day 2 -->
+            <h3>Day 2 – HIIT + Core</h3>
+            <ul>
+                <li>HIIT (20 min): Sprint 30 sec / Rest 90 sec × 6–8 rounds or Rowing Intervals / Jump Rope</li>
+                <li>Hanging Leg Raises – 3×12</li>
+                <li>Cable Crunches – 3×15</li>
+                <li>Russian Twists – 3×30 sec</li>
+                <li>Side Planks – 2×30 sec/side</li>
+            </ul>
+            <p class="rest-period">Rest: 30–45 sec (fast-paced day)</p>
+
+            <!-- Day 3 -->
+            <h3>Day 3 – Upper Body (Push Focus)</h3>
+            <ul>
+                <li>Incline Dumbbell Press – 4×8</li>
+                <li>Overhead Press – 4×10</li>
+                <li>Dumbbell Lateral Raises – 3×15</li>
+                <li>Tricep Dips – 3×10</li>
+                <li>Cable Tricep Pushdowns – 3×12</li>
+                <li><strong>Finisher:</strong> Push-up burnout – 2 sets to failure</li>
+            </ul>
+            <p class="rest-period">Rest: 60 sec</p>
+
+            <!-- Day 4 -->
+            <h3>Day 4 – Lower Body (Glutes, Hamstrings, Quads)</h3>
+            <ul>
+                <li>Deadlifts – 4×6</li>
+                <li>Bulgarian Split Squats – 3×10 per leg</li>
+                <li>Leg Press – 3×12</li>
+                <li>Hip Thrusts – 3×10</li>
+                <li>Standing Calf Raises – 4×15–20</li>
+            </ul>
+            <p class="rest-period">Rest: 90 sec</p>
+
+            <!-- Day 5 -->
+            <h3>Day 5 – Upper Body (Pull Focus)</h3>
+            <ul>
+                <li>Barbell Row – 4×8</li>
+                <li>Lat Pulldown – 3×12</li>
+                <li>Seated Cable Row – 3×12</li>
+                <li>Dumbbell Curls – 3×10</li>
+                <li>Preacher or Incline Curls – 3×12</li>
+                <li><strong>Finisher:</strong> Rear delt flyes – 3×15</li>
+            </ul>
+            <p class="rest-period">Rest: 60–90 sec</p>
+
+             <!-- Day 6 -->
+             <h3>Optional Day 6 – Cardio + Core (Active Recovery / Conditioning)</h3>
+             <ul>
+                 <li>20–30 min steady-state cardio (jog, incline treadmill, cycling)</li>
+                 <li>Ab wheel rollout – 3×10</li>
+                 <li>V-ups – 3×15</li>
+                 <li>Foam rolling & mobility</li>
+             </ul>
+             <!-- No specific rest period needed for optional day -->
+
+        </section>
+
+        <section class="nutrition-guidelines">
+             <h2>Nutrition Guidelines</h2>
+             <ul>
+                <li><strong>Calories:</strong> Maintenance or ~200 kcal deficit/day</li>
+                <li><strong>Protein:</strong> 2g/kg body weight</li>
+                <li><strong>Carbs:</strong> Moderate (~2–3.5g/kg) based on activity</li>
+                <li><strong>Fats:</strong> ~0.8–1g/kg</li>
+             </ul>
+             <p>Prioritize whole foods, fiber, hydration, and meal timing (pre/post-workout fuel).</p>
+        </section>
+
+        <section class="supplement-suggestions">
+             <h2>Supplement Suggestions (Optional)</h2>
+             <ul>
+                <li>Whey isolate – supports lean muscle</li>
+                <li>Creatine (5g/day) – improves strength & recovery</li>
+                <li>L-carnitine or green tea extract – mild metabolic boost (optional)</li>
+                <li>Magnesium or ZMA – helps recovery and sleep</li>
+             </ul>
+        </section>
+
+        <div class="back-btn-container">
+            <a href="wthrbmi.html" class="back-btn">Back to Calculator</a>
+        </div>
+    </div>
+</body>
+</html>

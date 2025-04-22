@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average Workout Plan - Fresh & Fit</title> <!-- UPDATED TITLE -->
+    <link rel="stylesheet" href="style.css"> <!-- Link base styles -->
+    <style>
+        /* Copied styles from fit.html / leanathletic.html */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 4rem 2rem; /* Add padding */
+            line-height: 1.7; /* Improve readability */
+        }
+        .workout-container {
+            max-width: 900px; /* Limit width for readability */
+            margin: 2rem auto; /* Center container */
+            background-color: var(--snd-bg-color); /* Use secondary background */
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(247, 114, 52, 0.5); /* Subtle shadow */
+        }
+        h1, h2, h3, h4 {
+            color: var(--main-color); /* Orange headings */
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-size: 2.8rem;
+            border-bottom: 1px solid var(--main-color);
+            padding-bottom: 0.5rem;
+        }
+        h3 { /* Using h3 for Day titles now */
+            font-size: 2.4rem;
+            color: var(--text-color); /* White for day names */
+            margin-top: 2rem; /* More space above day titles */
+        }
+        h4 { /* Can be used for sub-sections if needed */
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-top: 1.5rem;
+        }
+        p, li {
+            font-size: 1.7rem; /* Larger base text */
+            margin-bottom: 0.8rem;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        /* Removed workout-level specific styles as they aren't used here */
+
+        /* Style for rest periods */
+        .rest-period {
+            font-style: italic;
+            color: #ccc; /* Lighter color for rest */
+            margin-top: -0.5rem; /* Pull closer to the list */
+            margin-bottom: 1.5rem;
+        }
+
+        /* Style for finisher list items */
+        li strong { /* Make finisher label stand out */
+             color: var(--main-color);
+        }
+
+        .back-btn-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        /* Use .btn style from style.css for back button */
+        .back-btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 1rem;
+            box-shadow: none;
+            font-size: 1.6rem;
+            color: var(--bg-color);
+            letter-spacing: 0.1rem;
+            font-weight: 600;
+            transition: 0.5s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            color: var(--text-color);
+            box-shadow: 0 0 1.6rem var(--main-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="workout-container">
+        <h1>Average Workout Plan (Men 18-24% / Women 31-36% BF)</h1> <!-- UPDATED H1 -->
+
+        <section class="intro">
+            <!-- UPDATED INTRO CONTENT -->
+            <h2>Goal</h2>
+            <p>Fat Loss / Building Foundational Strength</p>
+
+            <h2>Target Audience</h2>
+            <p>Men (18–24% BF) / Women (31–36% BF)</p>
+
+            <h2>Training Level</h2>
+            <p>Beginner to Intermediate</p>
+
+            <h2>Caloric Intake</h2>
+            <p>Moderate deficit (300–500 kcal/day)</p>
+
+            <h2>Key Focus</h2>
+            <p>Consistency, compound movements, moderate cardio, improving body composition</p>
+            <!-- END UPDATED INTRO CONTENT -->
+        </section>
+
+        <section class="workout-schedule">
+            <h2>Weekly Workout Split (5 Days + 1 Optional Active Recovery Day)</h2>
+
+            <!-- Day 1 -->
+            <h3>Day 1 – Upper Body Strength (Push + Pull)</h3>
+            <ul>
+                <li>Incline Dumbbell Press – 3×10</li>
+                <li>Seated Shoulder Press – 3×12</li>
+                <li>Assisted Pull-ups or Lat Pulldown – 3×10</li>
+                <li>One-arm Dumbbell Row – 3×12 each side</li>
+                <li>Overhead Dumbbell Tricep Extension – 3×12</li>
+                <li>Dumbbell Hammer Curls – 3×12</li>
+            </ul>
+            <p class="rest-period">Rest: 60–90 sec</p>
+
+            <!-- Day 2 -->
+            <h3>Day 2 – Lower Body + Core</h3>
+            <ul>
+                <li>Goblet Squats – 4×12</li>
+                <li>Romanian Deadlifts – 3×10</li>
+                <li>Step-ups or Lunges – 3×10/leg</li>
+                <li>Standing Calf Raises – 3×15</li>
+                <li>Leg Raises – 3×15</li>
+                <li>Plank – 3×30–60 sec</li>
+            </ul>
+            <p class="rest-period">Rest: 60 sec</p>
+
+            <!-- Day 3 -->
+            <h3>Day 3 – Cardio Intervals + Core</h3>
+            <ul>
+                <li>25 min HIIT:
+                    <ul>
+                        <li>30 sec sprint / 90 sec walk × 6–8 rounds (treadmill, bike, rower)</li>
+                    </ul>
+                </li>
+                <li>Russian Twists – 3×30 sec</li>
+                <li>Bicycle Crunches – 3×15</li>
+                <li>Hanging Knee Raises – 3×12</li>
+                <li>Foam Rolling – 5–10 min cool down</li>
+            </ul>
+            <!-- No specific rest period needed for HIIT day -->
+
+            <!-- Day 4 -->
+            <h3>Day 4 – Total Body Functional Circuit</h3>
+            <h4>Circuit (Repeat 3–4 Rounds)</h4>
+            <ul>
+                <li>Kettlebell Swings – 15</li>
+                <li>Push-ups – 10–15</li>
+                <li>Air Squats – 15</li>
+                <li>Dumbbell Thrusters – 10</li>
+                <li>Jumping Jacks – 30 sec</li>
+            </ul>
+            <p class="rest-period">Rest 60–90 sec between rounds</p>
+            <p>Focus on form and tempo. Don’t rush!</p>
+
+            <!-- Day 5 -->
+            <h3>Day 5 – Full Body Strength</h3>
+            <ul>
+                <li>Deadlifts – 3×8</li>
+                <li>Barbell or Dumbbell Rows – 3×10</li>
+                <li>Incline Bench Press – 3×8</li>
+                <li>Hip Thrusts – 3×10</li>
+                <li>Front Raises (light dumbbells) – 3×12</li>
+                <li>Cable Woodchoppers – 3×12/side</li>
+            </ul>
+            <p class="rest-period">Rest: 90 sec</p>
+
+             <!-- Day 6 -->
+             <h3>Day 6 – Optional Active Recovery</h3>
+             <ul>
+                 <li>Brisk walk or light jog – 30 min</li>
+                 <li>Dynamic stretching or yoga – 20 min</li>
+                 <li>Focus on mobility, breathwork, and recovery</li>
+             </ul>
+             <!-- No specific rest period needed for optional day -->
+
+        </section>
+
+        <section class="nutrition-guidelines">
+             <h2>Nutrition Guidelines</h2>
+             <ul>
+                <li><strong>Calories:</strong> 300–500 kcal deficit/day</li>
+                <li><strong>Protein:</strong> 2g/kg (for muscle preservation)</li>
+                <li><strong>Carbs:</strong> Moderate (1.5–3g/kg), around workouts</li>
+                <li><strong>Fats:</strong> Moderate (0.8–1g/kg)</li>
+             </ul>
+             <p>Hydration: 3–4L/day + electrolytes</p>
+             <p>Keep meals whole-food based. Prioritize veggies, lean proteins, healthy fats, and whole grains. Minimize processed carbs and sugar.</p>
+        </section>
+
+        <section class="supplement-suggestions">
+             <h2>Supplement Suggestions (Optional)</h2>
+             <ul>
+                <li>Whey or plant protein – hit daily protein target</li>
+                <li>Multivitamin – general nutrient support</li>
+                <li>Creatine – strength & fat-free mass retention</li>
+                <li>Green tea or L-carnitine – gentle fat metabolism support (optional)</li>
+                <li>Electrolytes – especially during high cardio phases</li>
+             </ul>
+        </section>
+
+        <div class="back-btn-container">
+            <a href="wthrbmi.html" class="back-btn">Back to Calculator</a>
+        </div>
+    </div>
+</body>
+</html>

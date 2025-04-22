@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Risk Zone Workout Plan - Fresh & Fit</title> <!-- UPDATED TITLE -->
+    <link rel="stylesheet" href="style.css"> <!-- Link base styles -->
+    <style>
+        /* Copied styles from healtyzone.html */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 4rem 2rem; /* Add padding */
+            line-height: 1.7; /* Improve readability */
+        }
+        .workout-container {
+            max-width: 900px; /* Limit width for readability */
+            margin: 2rem auto; /* Center container */
+            background-color: var(--snd-bg-color); /* Use secondary background */
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(247, 114, 52, 0.5); /* Subtle shadow */
+        }
+        h1, h2, h3, h4 {
+            color: var(--main-color); /* Orange headings */
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-size: 2.8rem;
+            border-bottom: 1px solid var(--main-color);
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 2.4rem;
+        }
+        h4 {
+            font-size: 2rem;
+            color: var(--text-color); /* White for day names */
+            margin-top: 1.5rem;
+        }
+        p, li {
+            font-size: 1.7rem; /* Larger base text */
+            margin-bottom: 0.8rem;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        .workout-level {
+            background-color: var(--bg-color); /* Slightly darker background for levels */
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border-left: 5px solid; /* Add colored border */
+        }
+        .level-beginner { border-color: #4CAF50; } /* Green */
+        .level-intermediate { border-color: #2196F3; } /* Blue */
+        .level-advanced { border-color: #f44336; } /* Red */
+
+        .level-beginner h3 { color: #4CAF50; }
+        .level-intermediate h3 { color: #2196F3; }
+        .level-advanced h3 { color: #f44336; }
+
+        /* Added style for progression guide section if needed */
+        .progression-guide {
+             margin-top: 2.5rem;
+        }
+
+        .back-btn-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        /* Use .btn style from style.css for back button */
+        .back-btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 1rem;
+            box-shadow: none;
+            font-size: 1.6rem;
+            color: var(--bg-color);
+            letter-spacing: 0.1rem;
+            font-weight: 600;
+            transition: 0.5s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            color: var(--text-color);
+            box-shadow: 0 0 1.6rem var(--main-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="workout-container">
+        <h1>High Risk Zone Workout Plan (WHtR ≥ 0.6)</h1> <!-- UPDATED H1 -->
+
+        <section class="intro">
+            <!-- UPDATED INTRO CONTENT -->
+            <h2>Goal</h2>
+            <p>Improve overall health, reduce visceral fat, and gradually build strength and endurance.</p>
+
+            <h2>Schedule</h2>
+            <p>3–4 Days/Week (Mon–Fri)</p>
+
+            <h2>Structure</h2>
+            <ul>
+                <li><strong>Warm-Up (5–10 min):</strong> Light cardio or gentle dynamic stretches</li>
+                <li><strong>Main Workout:</strong> 3–4 exercises, 2–3 sets each</li>
+                <li><strong>Optional Finisher:</strong> Low-impact burst circuit</li>
+                <li><strong>Cooldown (5 min):</strong> Static stretching + deep breathing</li>
+            </ul>
+            <!-- END UPDATED INTRO CONTENT -->
+        </section>
+
+        <section class="workout-levels">
+            <h2>Workout Levels</h2>
+
+            <div class="workout-level level-beginner">
+                <h3>Beginner</h3>
+                <!-- UPDATED BEGINNER CONTENT -->
+                <h4>Monday – Low-Impact Cardio + Full Body Strength</h4>
+                <ul>
+                    <li>Brisk Walking or Stationary Bike – 15–20 min</li>
+                    <li>Chair Squats – 3x10</li>
+                    <li>Wall Push-Ups – 3x8</li>
+                    <li>Resistance Band Rows – 3x12</li>
+                    <li>Seated Leg Extensions – 2x12</li>
+                </ul>
+                <h4>Tuesday – Core + Mobility</h4>
+                <ul>
+                    <li>Standing Oblique Crunches – 3x10 each side</li>
+                    <li>Bird Dogs – 3x10 each side</li>
+                    <li>Seated Knee Lifts – 3x10</li>
+                    <li>Standing Marches – 3x30 sec</li>
+                    <li>Gentle Full-Body Stretch</li>
+                </ul>
+                <h4>Wednesday – Active Recovery</h4>
+                <ul>
+                    <li>20–30 min walk or light cycling</li>
+                    <li>Full-body stretching and mobility exercises</li>
+                    <li>Optional: Yoga or foam rolling</li>
+                </ul>
+                <h4>Thursday – Low-Impact Cardio + Lower Body Strength</h4>
+                <ul>
+                    <li>Swimming or Water Aerobics – 20 min</li>
+                    <li>Step-Ups (onto a low step) – 3x10 each leg</li>
+                    <li>Glute Bridges – 3x12</li>
+                    <li>Seated Calf Raises – 3x15</li>
+                    <li>Wall Sit – 2x30 sec</li>
+                </ul>
+                <h4>Friday – Full Body Low-Impact Circuit</h4>
+                <ul>
+                    <li>Chair Squats – 3x12</li>
+                    <li>Incline Push-Ups (on a wall or bench) – 3x8</li>
+                    <li>Dumbbell or Band Deadlifts – 3x10</li>
+                    <li>Standing Calf Raises – 3x15</li>
+                    <li>Marching in Place – 3x1 min</li>
+                </ul>
+                <!-- END UPDATED BEGINNER CONTENT -->
+            </div>
+
+            <div class="workout-level level-intermediate">
+                <h3>Intermediate</h3>
+                 <!-- UPDATED INTERMEDIATE CONTENT -->
+                 <h4>Monday – Low-Impact Cardio + Full Body Strength</h4>
+                 <ul>
+                     <li>Brisk Walking or Stationary Bike – 20 min</li>
+                     <li>Bodyweight Squats – 3x12</li>
+                     <li>Modified Push-Ups – 3x10</li>
+                     <li>Resistance Band Rows – 3x12</li>
+                     <li>Plank (on knees) – 3x20 sec</li>
+                 </ul>
+                 <h4>Tuesday – Core + Mobility</h4>
+                 <ul>
+                     <li>Leg Raises (on a mat) – 3x12</li>
+                     <li>Standing Oblique Crunches – 3x12 each side</li>
+                     <li>Bird Dogs – 3x12 each side</li>
+                     <li>Side-Lying Leg Lifts – 3x10 each side</li>
+                     <li>Gentle Full-Body Stretch</li>
+                 </ul>
+                 <h4>Wednesday – Active Recovery</h4>
+                 <ul>
+                     <li>20–30 min walk or light cycling</li>
+                     <li>Stretching or yoga flow</li>
+                     <li>Optional: Foam rolling</li>
+                 </ul>
+                 <h4>Thursday – Low-Impact Cardio + Lower Body Strength</h4>
+                 <ul>
+                     <li>Cycling or Swimming – 20 min</li>
+                     <li>Glute Bridges – 3x12</li>
+                     <li>Step-Ups (onto a higher step) – 3x10 each leg</li>
+                     <li>Seated Calf Raises – 3x20</li>
+                     <li>Wall Sit – 3x30 sec</li>
+                 </ul>
+                 <h4>Friday – Full Body Low-Impact Circuit</h4>
+                 <ul>
+                     <li>Squats (bodyweight or chair assist) – 3x12</li>
+                     <li>Incline Push-Ups – 3x10</li>
+                     <li>Dumbbell or Band Rows – 3x12</li>
+                     <li>Standing Calf Raises – 3x20</li>
+                     <li>High Knees (low impact) – 3x1 min</li>
+                 </ul>
+                 <!-- END UPDATED INTERMEDIATE CONTENT -->
+            </div>
+
+            <div class="workout-level level-advanced">
+                <h3>Advanced</h3>
+                <!-- UPDATED ADVANCED CONTENT -->
+                <h4>Monday – Low-Impact Cardio + Full Body Strength</h4>
+                <ul>
+                    <li>Brisk Walking or Stationary Bike – 20–30 min</li>
+                    <li>Bodyweight Squats (add dumbbells if able) – 4x12</li>
+                    <li>Push-Ups (or knee push-ups) – 4x10</li>
+                    <li>Resistance Band Rows – 4x12</li>
+                    <li>Plank – 3x30 sec</li>
+                </ul>
+                <h4>Tuesday – Core + Low-Impact Conditioning</h4>
+                <ul>
+                    <li>Russian Twists (without weight) – 4x15</li>
+                    <li>Leg Raises (or with resistance band) – 4x15</li>
+                    <li>Bird Dogs – 4x15</li>
+                    <li>Standing Oblique Crunches – 4x12 each side</li>
+                    <li>Low-Impact Jumping Jacks (30 sec on, 30 sec rest) – 4 rounds</li>
+                </ul>
+                <h4>Wednesday – Active Recovery</h4>
+                <ul>
+                    <li>30–40 min walk or light cycling</li>
+                    <li>Full-body mobility and deep stretching</li>
+                    <li>Optional: Yoga or foam rolling</li>
+                </ul>
+                <h4>Thursday – Low-Impact Cardio + Lower Body Strength</h4>
+                <ul>
+                    <li>Swimming or Cycling – 20–30 min</li>
+                    <li>Glute Bridges (add weight if possible) – 4x15</li>
+                    <li>Step-Ups (with added weight or higher step) – 4x12 each leg</li>
+                    <li>Seated Calf Raises – 4x20</li>
+                    <li>Wall Sit – 3x45 sec</li>
+                </ul>
+                <h4>Friday – Full Body Low-Impact Circuit</h4>
+                <ul>
+                    <li>Kettlebell Swings (or dumbbell) – 4x15</li>
+                    <li>Burpees (modified or low-impact) – 3x10</li>
+                    <li>Dumbbell Snatch (light weight) – 3x10 each side</li>
+                    <li>Squat to Press (light dumbbells) – 4x12</li>
+                    <li>Marching High Knees – 3x1 min</li>
+                </ul>
+                <!-- END UPDATED ADVANCED CONTENT -->
+            </div>
+        </section>
+
+        <!-- ADDED PROGRESSION GUIDE SECTION -->
+        <section class="progression-guide">
+             <h2>Progression Guide</h2>
+             <ul>
+                <li><strong>Low-Impact Focus:</strong> Prioritize activities like swimming, cycling, and walking to reduce joint stress.</li>
+                <li><strong>Increase Slowly:</strong> Start with bodyweight exercises and gradually increase weight or resistance.</li>
+                <li><strong>Consistency is Key:</strong> Focus on regular movement, and avoid overexertion. Aim for steady progress, not intensity.</li>
+                <li><strong>Monitor Health:</strong> Make sure the user listens to their body and adjusts intensity if necessary.</li>
+            </ul>
+        </section>
+        <!-- END ADDED PROGRESSION GUIDE SECTION -->
+
+        <div class="back-btn-container">
+            <a href="wthrbmi.html" class="back-btn">Back to Calculator</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overfat Workout Plan - Fresh & Fit</title> <!-- UPDATED TITLE -->
+    <link rel="stylesheet" href="style.css"> <!-- Link base styles -->
+    <style>
+        /* Copied styles from fit.html / leanathletic.html */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 4rem 2rem; /* Add padding */
+            line-height: 1.7; /* Improve readability */
+        }
+        .workout-container {
+            max-width: 900px; /* Limit width for readability */
+            margin: 2rem auto; /* Center container */
+            background-color: var(--snd-bg-color); /* Use secondary background */
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(247, 114, 52, 0.5); /* Subtle shadow */
+        }
+        h1, h2, h3, h4 {
+            color: var(--main-color); /* Orange headings */
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-size: 2.8rem;
+            border-bottom: 1px solid var(--main-color);
+            padding-bottom: 0.5rem;
+        }
+        h3 { /* Using h3 for Day titles now */
+            font-size: 2.4rem;
+            color: var(--text-color); /* White for day names */
+            margin-top: 2rem; /* More space above day titles */
+        }
+        h4 { /* Can be used for sub-sections if needed */
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-top: 1.5rem;
+        }
+        p, li {
+            font-size: 1.7rem; /* Larger base text */
+            margin-bottom: 0.8rem;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        /* Removed workout-level specific styles as they aren't used here */
+
+        /* Style for rest periods */
+        .rest-period {
+            font-style: italic;
+            color: #ccc; /* Lighter color for rest */
+            margin-top: -0.5rem; /* Pull closer to the list */
+            margin-bottom: 1.5rem;
+        }
+
+        /* Style for finisher list items */
+        li strong { /* Make finisher label stand out */
+             color: var(--main-color);
+        }
+
+        /* Style for sample flow table/list */
+        .sample-flow ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .sample-flow li {
+            display: grid;
+            grid-template-columns: 80px 1fr; /* Fixed width for Day */
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .sample-flow li span:first-child {
+            font-weight: bold;
+            color: var(--main-color);
+        }
+
+
+        .back-btn-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        /* Use .btn style from style.css for back button */
+        .back-btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 1rem;
+            box-shadow: none;
+            font-size: 1.6rem;
+            color: var(--bg-color);
+            letter-spacing: 0.1rem;
+            font-weight: 600;
+            transition: 0.5s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            color: var(--text-color);
+            box-shadow: 0 0 1.6rem var(--main-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="workout-container">
+        <h1>Overfat Workout Plan (Men 25%+ / Women 37%+ BF)</h1> <!-- UPDATED H1 -->
+
+        <section class="intro">
+            <!-- UPDATED INTRO CONTENT -->
+            <h2>Goal</h2>
+            <p>Fat Loss First, Strength Second</p>
+
+            <h2>Target Audience</h2>
+            <p>Men (25%+ BF) / Women (37%+ BF)</p>
+
+            <h2>Training Level</h2>
+            <p>Beginner or returning after long break</p>
+
+            <h2>Caloric Intake</h2>
+            <p>Moderate deficit (500–700 kcal/day)</p>
+
+            <h2>Key Focus</h2>
+            <p>Sustainable fat loss, cardiovascular health, foundational movement, mobility</p>
+            <!-- END UPDATED INTRO CONTENT -->
+        </section>
+
+        <section class="workout-schedule">
+            <h2>Weekly Workout Plan (4–5 Days Training + 1–2 Active Recovery)</h2>
+
+            <!-- Day 1 -->
+            <h3>Day 1 – Full Body Strength (Machines + Dumbbells)</h3>
+            <ul>
+                <li>Leg Press – 3×12</li>
+                <li>Dumbbell Chest Press – 3×10</li>
+                <li>Seated Row (machine or cable) – 3×10</li>
+                <li>Bodyweight Box Squats – 3×12</li>
+                <li>Dumbbell Shoulder Press – 2×12</li>
+                <li>Standing Cable Woodchoppers – 2×15</li>
+            </ul>
+            <p class="rest-period">Rest: 90 sec between sets</p>
+            <p>Goal: Movement confidence, range of motion</p>
+
+            <!-- Day 2 -->
+            <h3>Day 2 – Low Impact Cardio + Core</h3>
+            <ul>
+                <li>30–40 min brisk walk, incline treadmill, or cycling</li>
+                <li>Core Circuit ×3 rounds:
+                    <ul>
+                        <li>Bird-Dogs – 10/side</li>
+                        <li>Dead Bug – 10/side</li>
+                        <li>Seated Knee Raises – 15</li>
+                        <li>Plank (on elbows) – 30 sec</li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- No specific rest period needed -->
+
+            <!-- Day 3 -->
+            <h3>Day 3 – Strength + Mobility Focus</h3>
+            <ul>
+                <li>Goblet Squats – 3×10</li>
+                <li>Assisted Pull-downs – 3×12</li>
+                <li>Dumbbell Rows – 3×10</li>
+                <li>Hip Bridges – 3×15</li>
+                <li>Dumbbell Curls – 3×12</li>
+                <li>Standing Overhead Press (light DBs) – 2×12</li>
+                <li>Cat/Cow Stretch – 2×10</li>
+                <li>World’s Greatest Stretch – 2 reps/side</li>
+            </ul>
+            <p class="rest-period">Rest: 60–90 sec</p>
+
+            <!-- Day 4 -->
+            <h3>Day 4 – Rest or Active Recovery</h3>
+            <ul>
+                <li>30 min slow walk or swimming</li>
+                <li>Optional: light yoga / foam rolling / stretching</li>
+            </ul>
+            <!-- No specific rest period needed -->
+
+            <!-- Day 5 -->
+            <h3>Day 5 – Circuit Training (Light Weights + Cardio Blend)</h3>
+            <h4>Repeat 3–4 Rounds:</h4>
+            <ul>
+                <li>Step-ups or March in Place – 1 min</li>
+                <li>Seated Shoulder Press – 15 reps</li>
+                <li>Dumbbell Deadlifts – 12 reps</li>
+                <li>Stationary Bike or Elliptical – 2 min</li>
+                <li>Bodyweight Glute Bridges – 15</li>
+                <li>Standing Side Crunches – 20 reps/side</li>
+            </ul>
+            <p class="rest-period">Rest 60 sec between rounds</p>
+            <p>Pace: Controlled & sustainable</p>
+
+            <!-- Sample Flow -->
+            <h3 style="margin-top: 3rem;">Beginner Fat Loss Sample Weekly Flow</h3>
+            <div class="sample-flow">
+                <ul>
+                    <li><span>Mon</span><span>Strength (Full Body)</span></li>
+                    <li><span>Tue</span><span>Low-Impact Cardio + Core</span></li>
+                    <li><span>Wed</span><span>Strength + Mobility</span></li>
+                    <li><span>Thu</span><span>Rest / Recovery</span></li>
+                    <li><span>Fri</span><span>Light Circuit Training</span></li>
+                    <li><span>Sat</span><span>Active Recovery (Walk/Yoga)</span></li>
+                    <li><span>Sun</span><span>Optional Cardio / Full Rest</span></li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section class="nutrition-guidelines">
+             <h2>Nutrition Guidelines</h2>
+             <ul>
+                <li><strong>Calories:</strong> 500–700 kcal deficit/day</li>
+                <li><strong>Protein:</strong> High (2–2.2g/kg) to preserve muscle during fat loss</li>
+                <li><strong>Carbs:</strong> Low to moderate, focus on fiber (1–2.5g/kg)</li>
+                <li><strong>Fats:</strong> Moderate (0.8–1g/kg)</li>
+             </ul>
+             <p>Cut out sugar, fast food, excess oils.</p>
+             <p>Hydration: 3–4L/day, especially with cardio.</p>
+        </section>
+
+        <!-- ADDED LIFESTYLE TIPS SECTION -->
+        <section class="lifestyle-tips">
+            <h2>Lifestyle & Habit Tips</h2>
+            <ul>
+                <li><strong>Sleep:</strong> Aim for 7–8 hours</li>
+                <li><strong>Steps:</strong> Target 7k–10k daily</li>
+                <li><strong>Track food:</strong> Use apps (like MyFitnessPal) for awareness</li>
+                <li><strong>Progress tracking:</strong> Tape measurements + photos monthly</li>
+                <li><strong>Support:</strong> Accountability group or coach helps long-term</li>
+            </ul>
+        </section>
+        <!-- END LIFESTYLE TIPS SECTION -->
+
+        <section class="supplement-suggestions">
+             <h2>Supplement Suggestions (Optional)</h2>
+             <ul>
+                <li>Whey or Plant Protein – fill gaps in protein intake</li>
+                <li>Greens supplement – if veggie intake is low</li>
+                <li>Electrolytes – important for hydration</li>
+                <li>Creatine (optional) – even during fat loss, helps preserve lean mass</li>
+                <li>Caffeine / green tea extract – light metabolic aid (optional)</li>
+             </ul>
+        </section>
+
+        <div class="back-btn-container">
+            <a href="wthrbmi.html" class="back-btn">Back to Calculator</a>
+        </div>
+    </div>
+</body>
+</html>

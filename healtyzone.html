@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Zone Workout Plan - Fresh & Fit</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link base styles -->
+    <style>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 4rem 2rem; /* Add padding */
+            line-height: 1.7; /* Improve readability */
+        }
+        .workout-container {
+            max-width: 900px; /* Limit width for readability */
+            margin: 2rem auto; /* Center container */
+            background-color: var(--snd-bg-color); /* Use secondary background */
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(247, 114, 52, 0.5); /* Subtle shadow */
+        }
+        h1, h2, h3, h4 {
+            color: var(--main-color); /* Orange headings */
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-size: 2.8rem;
+            border-bottom: 1px solid var(--main-color);
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 2.4rem;
+        }
+        h4 {
+            font-size: 2rem;
+            color: var(--text-color); /* White for day names */
+            margin-top: 1.5rem;
+        }
+        p, li {
+            font-size: 1.7rem; /* Larger base text */
+            margin-bottom: 0.8rem;
+        }
+        ul {
+            list-style: disc;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        .workout-level {
+            background-color: var(--bg-color); /* Slightly darker background for levels */
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border-left: 5px solid; /* Add colored border */
+        }
+        .level-beginner { border-color: #4CAF50; } /* Green */
+        .level-intermediate { border-color: #2196F3; } /* Blue */
+        .level-advanced { border-color: #f44336; } /* Red */
+
+        .level-beginner h3 { color: #4CAF50; }
+        .level-intermediate h3 { color: #2196F3; }
+        .level-advanced h3 { color: #f44336; }
+
+        .back-btn-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        /* Use .btn style from style.css for back button */
+        .back-btn {
+            display: inline-block;
+            padding: 1rem 2.8rem;
+            background: var(--main-color);
+            border-radius: 1rem;
+            box-shadow: none;
+            font-size: 1.6rem;
+            color: var(--bg-color);
+            letter-spacing: 0.1rem;
+            font-weight: 600;
+            transition: 0.5s ease;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            color: var(--text-color);
+            box-shadow: 0 0 1.6rem var(--main-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="workout-container">
+        <h1>Healthy Zone Workout Plan (WHtR &lt; 0.5)</h1>
+
+        <section class="intro">
+            <h2>Goal</h2>
+            <p>Build strength, improve endurance, and tone the body.</p>
+
+            <h2>Schedule</h2>
+            <p>5 Days/Week (Mon–Fri)</p>
+
+            <h2>Structure</h2>
+            <ul>
+                <li><strong>Warm-Up (5–10 min):</strong> Dynamic stretches or light cardio</li>
+                <li><strong>Main Workout:</strong> 3–4 exercises, 3–4 sets each</li>
+                <li><strong>Optional Finisher:</strong> Short burst circuit or HIIT</li>
+                <li><strong>Cooldown (5 min):</strong> Static stretching + deep breathing</li>
+            </ul>
+        </section>
+
+        <section class="workout-levels">
+            <h2>Workout Levels</h2>
+
+            <div class="workout-level level-beginner">
+                <h3>Beginner</h3>
+                <h4>Monday – Upper Body Strength</h4>
+                <ul>
+                    <li>Wall Push-Ups – 3x10</li>
+                    <li>Resistance Band Rows – 3x12</li>
+                    <li>Seated Dumbbell Press – 3x10</li>
+                    <li>Forearm Plank – 2x30 sec</li>
+                </ul>
+                <h4>Tuesday – Lower Body Strength</h4>
+                <ul>
+                    <li>Bodyweight Squats – 3x10</li>
+                    <li>Step-Ups (onto a low step) – 3x10 each leg</li>
+                    <li>Glute Bridges – 3x15</li>
+                    <li>Seated Calf Raises – 3x15</li>
+                </ul>
+                <h4>Wednesday – Core + Conditioning</h4>
+                <ul>
+                    <li>Seated Knee Lifts – 3x15</li>
+                    <li>Dead Bugs – 3x10 each side</li>
+                    <li>Standing Oblique Crunch – 3x10 each side</li>
+                    <li>Marching in Place – 3x1 min</li>
+                </ul>
+                <h4>Thursday – Active Recovery</h4>
+                <ul>
+                    <li>20–30 min walk</li>
+                    <li>Light stretching or yoga flow</li>
+                    <li>Optional: Foam rolling</li>
+                </ul>
+                <h4>Friday – Full Body Circuit</h4>
+                <ul>
+                    <li>Chair Squats – 3x12</li>
+                    <li>Incline Push-Ups – 3x8</li>
+                    <li>Standing Rows (bands) – 3x10</li>
+                    <li>Step-Touch Side to Side – 3x30 sec</li>
+                </ul>
+            </div>
+
+            <div class="workout-level level-intermediate">
+                <h3>Intermediate</h3>
+                 <h4>Monday – Upper Body Strength</h4>
+                <ul>
+                    <li>Push-Ups – 3x10</li>
+                    <li>Dumbbell Rows – 3x12</li>
+                    <li>Shoulder Press – 3x10</li>
+                    <li>Plank with Shoulder Taps – 3x20</li>
+                </ul>
+                <h4>Tuesday – Lower Body Strength</h4>
+                <ul>
+                    <li>Goblet Squats – 3x12</li>
+                    <li>Walking Lunges – 3x10 each leg</li>
+                    <li>Glute Bridges – 3x15</li>
+                    <li>Wall Sit – 2x30 sec</li>
+                </ul>
+                <h4>Wednesday – Core + Conditioning</h4>
+                <ul>
+                    <li>Russian Twists – 3x20</li>
+                    <li>Leg Raises – 3x12</li>
+                    <li>Plank Hold – 3x45 sec</li>
+                    <li>Jumping Jacks – 3x30 sec</li>
+                </ul>
+                <h4>Thursday – Active Recovery</h4>
+                <ul>
+                    <li>30 min walk or light cycling</li>
+                    <li>Full-body mobility routine</li>
+                    <li>Foam rolling or stretching</li>
+                </ul>
+                <h4>Friday – Full Body Circuit</h4>
+                <ul>
+                    <li>Jump Squats – 3x12</li>
+                    <li>Push-Up + Row – 3x10</li>
+                    <li>Mountain Climbers – 3x30 sec</li>
+                    <li>Dumbbell Thrusters – 3x10</li>
+                </ul>
+            </div>
+
+            <div class="workout-level level-advanced">
+                <h3>Advanced</h3>
+                <h4>Monday – Upper Body Strength</h4>
+                <ul>
+                    <li>Diamond Push-Ups – 4x10</li>
+                    <li>Weighted Pull-Ups or Rows – 4x8</li>
+                    <li>Arnold Press – 4x10</li>
+                    <li>Plank to Push-Up – 3x12</li>
+                </ul>
+                <h4>Tuesday – Lower Body Strength</h4>
+                <ul>
+                    <li>Barbell Squats or Heavy Goblet Squats – 4x8</li>
+                    <li>Bulgarian Split Squats – 3x8 each leg</li>
+                    <li>Hip Thrusts – 3x15</li>
+                    <li>Jump Lunges – 3x10</li>
+                </ul>
+                <h4>Wednesday – Core + HIIT</h4>
+                <ul>
+                    <li>Hanging Leg Raises or Weighted Crunches – 4x15</li>
+                    <li>Plank with Reach – 3x20</li>
+                    <li>Bicycle Crunches – 3x30</li>
+                    <li>HIIT: 30s High Knees → 30s Rest × 6 rounds</li>
+                </ul>
+                <h4>Thursday – Active Recovery</h4>
+                <ul>
+                    <li>20–30 min jog, cycling, or swim</li>
+                    <li>Full-body mobility and deep stretching</li>
+                    <li>Optional: Sauna, ice bath, or yoga</li>
+                </ul>
+                <h4>Friday – Full Body Power Circuit</h4>
+                <ul>
+                    <li>Kettlebell Swings – 3x15</li>
+                    <li>Burpees – 3x12</li>
+                    <li>Dumbbell Snatch – 3x10 each side</li>
+                    <li>AMRAP (5 min):
+                        <ul>
+                            <li>10 Jump Squats</li>
+                            <li>5 Push-Ups</li>
+                            <li>10 Sit-Ups</li>
+                            <li>20 Mountain Climbers</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="back-btn-container">
+            <a href="wthrbmi.html" class="back-btn">Back to Calculator</a>
+        </div>
+    </div>
+</body>
+</html>
